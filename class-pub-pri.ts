@@ -1,12 +1,12 @@
 class department {
-    public name: string;
-    private dept_id : string;
+    //public name: string;
+    //private dept_id : string;
     private students : string[]=[];
 
 
-    constructor(n: string, id :string){
-        this.name= n;
-        this.dept_id= id;
+    constructor(public name: string, private readonly dept_id :string){      // readonly can be initialised only once
+        //this.name= n;
+        //this.dept_id= id;
     }
 
     description(this: department)
@@ -26,7 +26,7 @@ class department {
 }
  const newdept = new department("Science", "SCI01");
  console.log(newdept);
-
+ 
  newdept.description();
 const dummy= { name : "DummyObject", description: newdept.description};
 
